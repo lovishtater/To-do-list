@@ -5,21 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>to do list</title>
+    <!-- 15th line of app.js is used to serve up a public folder which contain styles.css  -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <h1>To do list</h1>
-    <div>
-        
-          <% for( let index = 0; index < htmlItems.length; index++ ) { %>
-        <li> <%=  htmlItems[index] %> </li>
-          <% }; %>
-           
-        <form action="/" method="post">
-        <input type="text" name="input" >
-        <input type="submit" value="submit">
 
-</form>
+    <div class="box" id="heading">
+<h1>To do list</h1>
+    </div>
+    
+    <div class="box">
+      <div class="item">
+
+        <% for( let index = 0; index < htmlItems.length; index++ ) { %>
+        <input type="checkbox" name="" id="">
+             <%=  htmlItems[index] %> 
+        <% }; %>
+</div>
+        <form action="/" method="post">
+            <input type="text" name="input">
+            <input type="submit" value="submit">
+
+        </form>
 
     </div>
     <!-- <script src="app.js"></script> -->
