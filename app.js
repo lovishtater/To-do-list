@@ -15,15 +15,17 @@ app.use(express.static("public"));
 let items = ['drink water', 'eat food'];
 
 app.get("/", function (req, res) {
+    var datetime = new Date();
+    console.log(datetime.toISOString().slice(0, 10));
+    
     res.render('lists', {
         htmlItems: items
     });
 });
 
 app.post("/", function (req, res) {
-    let input = req.body.input;
-    items.push(input);
-    console.log(items);
+    let input = req.body.input; 
+    items.push(input)
     res.redirect("/");
 });
 

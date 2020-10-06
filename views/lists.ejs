@@ -16,21 +16,22 @@
     </div>
     
     <div class="box">
-      <div class="item">
+      
 
         <% for( let index = 0; index < htmlItems.length; index++ ) { %>
+            <div class="item">
         <input type="checkbox" name="" id="">
-             <%=  htmlItems[index] %> 
+          <p>   <%=  htmlItems[index] %> </p>
+            </div>
         <% }; %>
-</div>
-        <form action="/" method="post">
+
+        <form class="item" action="/" method="post">
             <input type="text" name="input">
-            <input type="submit" value="submit">
+            <button type="submit">+</button>
+            <button type="reset" name="removeinput" style="margin-left: 4px;">-</button>
 
         </form>
-
-    </div>
-    <!-- <script src="app.js"></script> -->
+        </div>
 </body>
 
 </html>
