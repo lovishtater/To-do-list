@@ -10,10 +10,10 @@
 </head>
 
 <body>
-
+<center><p>Made with ❤️ by Lovish</p></center>
     <div class="box" id="heading">
         <h1> <%= listName %> </h1>
-        <p><i>Click on checkbox to remove list items</i></p>
+       <small><i>Click on checkbox to remove list items</i></small> 
     </div>
 
     <div class="box">
@@ -30,7 +30,7 @@
         <% }) %>
 <input type="hidden" name=""></input>
         <form class="item" action="/" method="post">
-            <input type="text" autocomplete="off" name="input">
+            <input type="text" autocomplete="off" name="input" placeholder="Enter new item here">
             <button type="submit" name="customInput" value="<%= listName %>">+</button>
             <!-- <button type="reset" name="removeinput" style="margin-left: 4px;">-</button> -->
 
