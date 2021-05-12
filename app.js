@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
@@ -14,10 +14,18 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
-mongoose.connect('mongodb+srv://lovish:2LB3pQaSwiIkrvCt@cluster0.nyykt.mongodb.net/listDB', {
+mongoose
+  .connect(process.env.DATABASE, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+    useUnifiedTopology: true,
+    useCreateIndex: true
+  })
+  .then(() => {
+    console.log("DB CONNECTED");
+  })
+  .catch((err)=>{
+    console.log('Connection failed !!'+ err.message);
+  });
 const listSchema = {
     name: String
 };
@@ -132,10 +140,7 @@ if(!err){
 }
         });
     }
-    
-
 });
-
 
 app.listen(process.env.PORT || 3000, function () {
     console.log("Server started on port 3000.");
